@@ -1,0 +1,12 @@
+name: mlflow_innova
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      data_path: {type: str, default: "/dbfs/dbfs/mlflowInnova/iris.csv"}
+      n_estimators: {type: int, default: 1}
+      max_depth: {type: int, default: 3}
+      max_features: {type: str, default: "auto"}
+    command: "python train.py --data_path {data_path} --n_estimators {n_estimators} --max_depth {max_depth} --max_features {max_features}"
