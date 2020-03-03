@@ -2,14 +2,14 @@ import os
 import mlflow.sklearn
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+from sklearn.metrics import *
 from sklearn.model_selection import train_test_split
 
 def ava_innova(data_path, n_estimators, max_depth, max_features):
 
   with mlflow.start_run() as run:
     # Crear modelo, entrenarlo y crear predicciones
-    rf = RandomForestRegressor(**params) #Llamar al modelo
+    rf = RandomForestClassifier(**params) #Llamar al modelo
     rf.fit(X_train, y_train) #Enternarlo
     predictions = rf.predict(X_test) #Predicciones
 
